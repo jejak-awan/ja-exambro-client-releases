@@ -10,8 +10,11 @@ Repositori distribusi resmi aplikasi **Jejakawan Exam Client** (`com.jejakawan.p
 ## Unduh Cepat (Versi Terbaru: `v1.1.2`)
 
 - **Halaman Unduh CDN Resmi (Publik, tanpa login):** [https://cdn.jejakawan.com/exambro/](https://cdn.jejakawan.com/exambro/)
+- **Mirror Cadangan (Jika CDN Gangguan):** unduh langsung dari GitHub Releases / Tag di [https://github.com/jejak-awan/ja-exambro-client-releases/releases/tag/v1.1.2](https://github.com/jejak-awan/ja-exambro-client-releases/releases/tag/v1.1.2) (atau daftar semua versi di [Tags](https://github.com/jejak-awan/ja-exambro-client-releases/tags)).
 - **Manifest Versi Terbaru:** [https://cdn.jejakawan.com/exambro/latest.json](https://cdn.jejakawan.com/exambro/latest.json)
-- **GitHub Releases:** buka tab **Releases** di repositori ini untuk mengunduh APK beserta `SHA256SUMS.txt`.
+
+> **Rekomendasi Distribusi Sekolah (Hemat Kuota & Lebih Cepat):**  
+> Agar tidak membebani koneksi internet sekolah maupun server CDN saat hari H ujian, **cukup 1 orang Panitia / Proktor per sekolah** yang mengunduh file APK, lalu bagikan file APK tersebut ke grup jejaring internal sekolah (WhatsApp, Telegram, LMS, atau server lokal sekolah).
 
 ### Memilih File APK yang Tepat
 

@@ -8,7 +8,8 @@ Halaman web panduan: [https://cdn.jejakawan.com/exambro/guide.html](https://cdn.
 ## 1. Panduan Peserta (Siswa)
 
 ### A. Instalasi & Persiapan Awal
-1. Unduh file APK **Jejakawan Exam Client** dari [https://cdn.jejakawan.com/exambro/](https://cdn.jejakawan.com/exambro/) (disarankan `arm64-v8a` untuk HP Android modern, atau `universal` jika ragu).
+1. Unduh file APK **Jejakawan Exam Client** dari [https://cdn.jejakawan.com/exambro/](https://cdn.jejakawan.com/exambro/) (atau dari file APK yang dibagikan Panitia/Proktor melalui grup internal sekolah). Jika CDN sedang gangguan, gunakan mirror resmi GitHub Releases/Tag di [https://github.com/jejak-awan/ja-exambro-client-releases/tags](https://github.com/jejak-awan/ja-exambro-client-releases/tags).
+   - *Rekomendasi Sekolah:* Cukup **1 orang Panitia/Proktor** per sekolah yang mengunduh APK, lalu bagikan ke grup jejaring internal sekolah agar distribusi ke peserta lebih cepat dan hemat kuota.
 2. Jika Android meminta izin instalasi dari browser/file manager, aktifkan **Izinkan dari sumber ini**.
 3. Buka aplikasi dan selesaikan layar awal (*Onboarding*): baca ringkasan privasi, centang persetujuan, dan berikan izin yang diminta sistem.
 4. *(Khusus sekolah dengan kebijakan Pro+ / SME berlisensi)* Jika diminta mengaktifkan **Jejakawan Keyboard**, ikuti tombol pintasan ke pengaturan keyboard Android dan pilih **Jejakawan Keyboard** sebelum memulai ujian.

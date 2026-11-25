@@ -56,6 +56,12 @@ Secara teknis, aplikasi hanya melakukan koneksi jaringan terbatas berikut:
 | **Manifest Update Publik** (`GET https://cdn.jejakawan.com/exambro/latest.json`) | Client & Admin | Permintaan `GET` statis untuk mengecek nomor versi terbaru | **Tidak mengirim** data pribadi, ID siswa, atau informasi ujian. |
 | **Verifikasi Lisensi Instansi** (`POST https://cp.k2net.id/api/v1/license/verify`) | **Admin saja** (saat aktivasi) | `domain` sekolah, `license_key`, kode produk, ID instalasi anonim, dan versi aplikasi | Hanya untuk validasi lisensi instansi pada aplikasi Admin; **tanpa data siswa**. |
 
+### Catatan Formulir Unduh Halaman Web CDN (`cdn.jejakawan.com/exambro/`)
+Berbeda dari **aplikasi Android** yang 100% *Zero-Collection*, halaman web unduh publik di `cdn.jejakawan.com/exambro/` meminta input **Nama**, **Nama Sekolah/Instansi**, dan **Peran** sebelum mengunduh APK semata-mata untuk **penghitung agregat jumlah unduhan dan jumlah sekolah/instansi pengguna**. Data formulir web ini:
+- **Tidak pernah ditampilkan per-individu ke publik** (halaman web hanya menampilkan angka total agregat).
+- **Tidak dijual atau dibagikan ke pihak ketiga.**
+- **Terpisah sepenuhnya** dan tidak pernah dihubungkan dengan aktivitas maupun jawaban ujian di dalam aplikasi Android.
+
 ---
 
 ## 5. Penggunaan Izin Sensitif Android & Pemrosesan Lokal (*On-Device*)
