@@ -1,0 +1,5 @@
+# APK rilis didistribusikan melalui tab Releases & CDN, bukan di-commit ke git tree.
+*.apk
+*.aab
+*.jks
+*.keystore
