@@ -57,8 +57,11 @@ Satu aplikasi **Jejakawan Exam Client** secara dinamis menyesuaikan tingkat prot
 
 1. Unduh file APK sesuai arsitektur perangkat (disarankan `arm64-v8a`).
 2. Izinkan pemasangan aplikasi dari browser/file manager jika diminta Android.
-3. Buka **Jejakawan Exam Client**, lalu **Scan QR Ruang Ujian** yang dibagikan pengawas/sekolah (atau pilih ruang ujian yang sudah tersimpan).
+3. Buka **Jejakawan Exam Client**, lalu **Scan QR Ruang Ujian** yang dibagikan pengawas/sekolah (atau masukkan URL ruang ujian pada mode mandiri).
 4. Login menggunakan akun peserta sekolah Anda.
+
+> **Panduan Lengkap (Keluar Sesi, Buka Blokir / Unblock & Pengaturan Pengawas):**  
+> Informasi langkah operasional lengkap termasuk prosedur keluar ujian, penanganan layar terblokir (*unblock*), mode token dinamis, dan panduan pengawas dapat dibaca pada dokumen **[Panduan Penggunaan (GUIDE.md)](./GUIDE.md)** atau halaman web [https://cdn.jejakawan.com/exambro/guide.html](https://cdn.jejakawan.com/exambro/guide.html).
 
 ---
 
