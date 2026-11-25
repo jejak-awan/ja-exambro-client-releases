@@ -51,15 +51,14 @@ Untuk pelaksanaan ujian resmi di sekolah/instansi, tersedia **3 mekanisme kontro
 Kode di bawah ini **hanya berlaku** apabila ruang ujian **tidak** memakai QR kustom dari Admin, **tidak** memakai Token Dinamis Offline, dan PIN/Password belum diubah dari bawaan instalasi awal.
 
 <details>
-<summary><strong>Klik untuk melihat Kode Bawaan (Keluar, Buka Blokir & Admin Awal)</strong></summary>
+<summary><strong>Klik untuk melihat Kode Bawaan (Keluar &amp; Buka Blokir)</strong></summary>
 
 <br>
 
 | Fungsi | Kode Bawaan (*Default*) | Keterangan |
 | :--- | :---: | :--- |
-| **Password Keluar Sesi Ujian** (*Exit Password*) | `170845` | Dipakai untuk keluar dari mode ujian/kiosk jika tidak diatur password kustom atau token dinamis. |
-| **PIN Buka Blokir / Pelanggaran** (*Unlock PIN*) | `100110` | Dipakai pengawas untuk membuka layar blokir (*Unblock*) saat terjadi pelanggaran atau meninjau log pelanggaran. |
-| **PIN Pengaturan Admin** (*khusus Edisi Admin*) | `251145` | Dipakai pertama kali masuk menu Pengaturan Admin di **Jejakawan Exam Admin**; segera ubah setelah instalasi. |
+| **Password Keluar Sesi Ujian** (*Exit Password*) | `170845` | Tanggal Hari Kemerdekaan RI (17 Agustus 1945). Dipakai untuk keluar dari mode ujian/kiosk jika tidak diatur password kustom atau token dinamis. |
+| **PIN Buka Blokir / Pelanggaran** (*Unlock PIN*) | `251145` | Tanggal Hari Guru Nasional (25 November 1945). Dipakai pengawas untuk membuka layar blokir (*Unblock*) saat terjadi pelanggaran atau meninjau log pelanggaran. |
 
 **Catatan Penting:**
 - Jika sekolah Anda membagikan **QR Ruang Ujian** dengan kebijakan kustom atau **Mode Token Dinamis Offline**, maka kode bawaan di atas digantikan oleh kode/token dari pengawas ruang ujian Anda.

@@ -1,5 +1,9 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.1.2 (2026-11-25)
+- Pembaruan konfigurasi kode bawaan (*default*) buka blokir pelanggaran (*Unlock PIN*) — lihat [GUIDE.md](./GUIDE.md).
+- Pembaruan dokumentasi publik: penambahan **Panduan Penggunaan (`GUIDE.md`)** dan **Kebijakan Privasi & Kepatuhan (`PRIVACY.md`)**.
+
 ## v1.1.1 (2026-11-25)
 - Peningkatan stabilitas koneksi & sinkronisasi konfigurasi ruang ujian.
 - Pembaruan penamaan paket rilis publik menjadi `ja-exambro-client-v<versi>-<abi>.apk`.
