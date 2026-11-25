@@ -74,4 +74,14 @@ Setiap rilis juga menyertakan file `SHA256SUMS.txt` untuk verifikasi integritas 
 
 ---
 
+## Privasi, Kepatuhan & Tanggung Jawab Data
+
+- **Zero-Collection & Tanpa Pelacak:** Aplikasi tidak menyertakan SDK analitik, iklan, atau telemetri pihak ketiga. **JEJAKAWAN tidak mengumpulkan, menyimpan, maupun mengakses data pribadi peserta atau konten ujian.**
+- **Pemrosesan Lokal (*On-Device*):** Izin keamanan Android (deteksi overlay, aplikasi asing, kamera/QR ML Kit, ambang audio, dan geofencing GPS) diproses lokal di perangkat dan hanya berkomunikasi langsung dengan server ujian/LMS yang dipilih sekolah.
+- **Tanggung Jawab Penuh Pengguna & Institusi (*Shared Responsibility*):** Sesuai standar **UU PDP No. 27 Tahun 2022** dan **GDPR**, sekolah/institusi penyelenggara ujian (atau pengguna mandiri) bertindak penuh sebagai **Pengendali Data (*Data Controller*)** dan bertanggung jawab penuh atas keamanan server, konfigurasi ujian, persetujuan peserta, serta pengelolaan data ujiannya sendiri.
+
+Baca dokumen kebijakan lengkap di **[PRIVACY.md](./PRIVACY.md)** atau halaman publik [https://cdn.jejakawan.com/exambro/privacy.html](https://cdn.jejakawan.com/exambro/privacy.html).
+
+---
+
 Dikembangkan oleh [**JEJAKAWAN**](https://jejakawan.com)
