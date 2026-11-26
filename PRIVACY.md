@@ -1,13 +1,13 @@
 # Kebijakan Privasi, Kepatuhan & Tanggung Jawab Data — Jejakawan Exam
 
-**Berlaku efektif:** 25 November 2026  
+**Berlaku efektif:** 27 November 2026  
 **Pengembang Perangkat Lunak:** [JEJAKAWAN](https://jejakawan.com)  
 **Cakupan Aplikasi:** Jejakawan Exam Client (`com.jejakawan.platform.student`) & Jejakawan Exam Admin (`com.jejakawan.platform.admin`)  
 **Halaman Web Resmi:** [https://cdn.jejakawan.com/exambro/privacy.html](https://cdn.jejakawan.com/exambro/privacy.html)
 
 ---
 
-## 1. Prinsip Utama: *Zero-Collection* & Arsitektur Mandiri
+## 1. Prinsip Utama: *Zero-Collection*, Transparansi & Arsitektur Mandiri
 
 **JEJAKAWAN tidak mengumpulkan, menyimpan, menjual, memprofilkan, maupun memiliki akses terhadap data pribadi peserta didik, jawaban ujian, rekaman proctoring, atau isi sesi ujian.**
 
@@ -15,6 +15,8 @@ Jejakawan Exam dirancang sebagai **perangkat lunak klien ujian mandiri (*standal
 
 - **Tanpa SDK Pelacak:** Aplikasi tidak menyertakan Firebase Analytics, Crashlytics, Sentry, SDK iklan (AdMob/Meta), atau telemetri perilaku pihak ketiga mana pun.
 - **Tanpa Database Peserta di JEJAKAWAN:** Seluruh kredensial login LMS, soal, jawaban, nilai, dan log ujian berada sepenuhnya di infrastruktur server sekolah/institusi atau lokal di perangkat pengguna.
+- **Pengawasan Transparan (Tidak Pernah Diam-Diam):** Apabila sekolah mengaktifkan pengawasan kamera atau audio, aplikasi selalu menampilkan **indikator langsung di layar peserta** (`Kamera Pengawas Aktif` / `Audio Pengawas Aktif — diproses lokal`) agar peserta mengetahui secara terbuka bahwa pengawasan sedang berjalan.
+- **Bukti Pelanggaran Terenkripsi Lokal (*Zero Auto-Upload*):** Foto bukti pelanggaran (bila diaktifkan kebijakan sekolah) disimpan **terenkripsi secara lokal** di perangkat peserta dan **tidak pernah diunggah otomatis**. Bukti hanya dapat ditinjau, dibagikan secara lokal sementara (*cache* otomatis bersih), atau dikirim secara manual ke server Moodle SME milik sekolah oleh pengawas berwenang dengan memasukkan **PIN Pengawas**.
 
 ---
 
@@ -52,7 +54,7 @@ Secara teknis, aplikasi hanya melakukan koneksi jaringan terbatas berikut:
 
 | Tujuan Koneksi | Edisi | Data yang Dikirim | Keterangan |
 | :--- | :--- | :--- | :--- |
-| **Server Ujian / LMS Sekolah** (URL dari QR / pengaturan sekolah) | Client & Admin | Lalu lintas WebView LMS, *handshake* keamanan HMAC (token perangkat acak non-hardware), dan *sync* konfigurasi/log **hanya jika diaktifkan sekolah** | Langsung antara perangkat dan server sekolah — **tidak melewati server JEJAKAWAN**. |
+| **Server Ujian / LMS Sekolah** (URL dari QR / pengaturan sekolah, mis. `/local/jejakawan/exambro_api.php`) | Client & Admin | Lalu lintas WebView LMS, *handshake* keamanan HMAC-SHA256 (token perangkat acak non-hardware), laporan pelanggaran (`report_event`), *heartbeat* status/buka-kunci proktor (`heartbeat`, `proctor_local_unlock`), sinkronisasi aturan (`push_policy`/`pull_policy`), serta kirim bukti foto **khusus atas aksi manual Pengawas via PIN (`upload_evidence`)** **hanya jika dikonfigurasi sekolah** | Langsung antara perangkat dan server sekolah — **tidak melewati server JEJAKAWAN**. |
 | **Manifest Update Publik** (`GET https://cdn.jejakawan.com/exambro/latest.json`) | Client & Admin | Permintaan `GET` statis untuk mengecek nomor versi terbaru | **Tidak mengirim** data pribadi, ID siswa, atau informasi ujian. |
 | **Verifikasi Lisensi Instansi** (`POST https://cp.k2net.id/api/v1/license/verify`) | **Admin saja** (saat aktivasi) | `domain` sekolah, `license_key`, kode produk, ID instalasi anonim, dan versi aplikasi | Hanya untuk validasi lisensi instansi pada aplikasi Admin; **tanpa data siswa**. |
 
@@ -73,8 +75,8 @@ Seluruh izin sensitif hanya digunakan secara lokal saat sesi ujian berlangsung u
 | **`QUERY_ALL_PACKAGES` & `PACKAGE_USAGE_STATS`** | Mendeteksi aplikasi terlarang, *cloning/virtual app*, atau aplikasi mengambang (*overlay*) selama ujian | 100% lokal di perangkat; daftar aplikasi tidak dikirim ke JEJAKAWAN. |
 | **`HIDE_OVERLAY_WINDOWS` & `SYSTEM_ALERT_WINDOW`** | Memblokir jendela mengambang pihak ketiga di atas layar ujian (Android 12+) | 100% lokal di sistem Android. |
 | **`DETECT_SCREEN_CAPTURE`** | Mendeteksi upaya tangkapan layar (*screenshot*) atau perekaman layar saat ujian | 100% lokal di perangkat. |
-| **`CAMERA` (ML Kit Face Detection & Barcode)** | Scan QR Ruang Ujian dan (opsional tier *Organization/Enterprise*) hitung jumlah wajah untuk proctoring | Deteksi wajah & QR berjalan **on-device** via Google ML Kit tanpa membuat profil biometrik dan tanpa dikirim ke server JEJAKAWAN. |
-| **`RECORD_AUDIO`** | (Opsional tier *Organization/Enterprise*) Mengukur ambang kebisingan suara (desibel) selama ujian | Hanya memantau amplitudo/desibel lokal di cache sementara perangkat; tidak dikirim ke JEJAKAWAN. |
+| **`CAMERA` (ML Kit Face Detection & Barcode)** | Scan QR Ruang Ujian dan (opsional tier *Organization/Enterprise*) hitung jumlah wajah untuk proctoring | Deteksi wajah & QR berjalan **on-device** via Google ML Kit tanpa profil biometrik, dengan indikator aktif transparan di layar. Foto bukti (bila diaktifkan) tersimpan terenkripsi lokal (tanpa *auto-upload*) dan tidak pernah dikirim ke server JEJAKAWAN. |
+| **`RECORD_AUDIO`** | (Opsional tier *Organization/Enterprise*) Mengukur ambang kebisingan suara (desibel) selama ujian | Hanya memantau amplitudo/desibel lokal di cache sementara perangkat (otomatis jeda saat alarm blokir berbunyi) dengan indikator transparan di layar; tidak dikirim ke JEJAKAWAN. |
 | **`ACCESS_FINE_LOCATION` / `COARSE_LOCATION`** | (Opsional tier *Enterprise*) Memverifikasi radius lokasi ujian (*Geofencing*) | Perhitungan jarak (*Haversine*) dilakukan lokal di perangkat terhadap koordinat yang diatur sekolah. |
 | **`BLUETOOTH`, `READ_PHONE_STATE`** | (Opsional tier *Pro+*) Mendeteksi perangkat audio Bluetooth/headset dan status kartu SIM selama sesi ujian | Status diperiksa lokal; tidak mengambil nomor telepon/IMEI untuk JEJAKAWAN. |
 | **Google Play Integrity API** | (Opsional tier *Enterprise*) Memastikan keaslian aplikasi & integritas perangkat | Token integritas diverifikasi hanya terhadap server ujian yang dikonfigurasi sekolah. |
@@ -85,8 +87,8 @@ Seluruh izin sensitif hanya digunakan secara lokal saat sesi ujian berlangsung u
 
 ## 6. Kontrol Data Lokal & Hak Subjek Data
 
-- **Kontrol di Perangkat:** Pengguna dapat menghapus seluruh konfigurasi ruang ujian, cache WebView, cookie, dan data lokal kapan saja melalui menu **Reset Konfigurasi** di dalam aplikasi, melalui *Settings → Apps → Clear Storage/Data* Android, atau dengan mencopot (*uninstall*) aplikasi.
-- **Permintaan Akses, Koreksi, atau Penghapusan Data Ujian:** Karena JEJAKAWAN tidak menyimpan data peserta maupun hasil ujian, segala permintaan terkait hak subjek data (sesuai UU PDP / GDPR) harus disampaikan langsung kepada **Sekolah / Institusi Penyelenggara Ujian** selaku Pengendali Data.
+- **Kontrol di Perangkat:** Pengguna dapat menghapus seluruh konfigurasi ruang ujian, foto bukti terenkripsi lokal, cache WebView, cookie, dan data lokal kapan saja melalui menu **Reset Konfigurasi** di dalam aplikasi, melalui *Settings → Apps → Clear Storage/Data* Android, atau dengan mencopot (*uninstall*) aplikasi.
+- **Permintaan Akses, Koreksi, atau Penghapusan Data Ujian:** Karena JEJAKAWAN tidak menyimpan data peserta maupun hasil ujian, segala permintaan terkait hak subjek data (sesuai UU PDP / GDPR — termasuk penghapusan log integritas dan foto bukti `exambro_evidence` yang dikirim manual pengawas melalui Moodle Privacy API) harus disampaikan langsung kepada **Sekolah / Institusi Penyelenggara Ujian** selaku Pengendali Data.
 
 ---
 
