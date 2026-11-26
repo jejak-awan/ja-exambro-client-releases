@@ -1,5 +1,12 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.2.0 (2026-11-26)
+- **Kalibrasi Kamera Proctoring & UI Check-in Wajah (Anti False-Positive):**
+  - **Cek Kamera & Foto Check-in Awal:** sebelum ujian dimulai (saat proctoring kamera aktif), peserta diarahkan memastikan wajah terlihat jelas di kamera depan dan 1 foto referensi awal tersimpan terenkripsi untuk pembanding di *Galeri Bukti Pengawas*.
+  - **Filter Jarak Wajah (`minFaceSize = 0.22`):** mengabaikan wajah teman atau pengawas di latar belakang kelas.
+  - **Peringatan Lembut & Debounce:** wajah hilang menampilkan banner peringatan kuning di detik ke-3 sebelum blokir di detik ke-7 (aman saat menunduk menulis di kertas buram); deteksi multi-wajah kini memerlukan 2,5 detik berturut-turut (aman jika pengawas lewat di belakang).
+  - **Hemat Baterai:** konversi foto bukti hanya dijalankan saat terjadi pelanggaran (tidak lagi pada setiap frame normal).
+
 ## v1.1.9 (2026-11-26)
 - **Override Password Keluar & PIN Buka Blokir dari Exambro Admin:** Password Keluar (*Exit Password*) dan PIN Buka Blokir (*Unlock PIN*) yang diubah di Exambro Admin kini otomatis tertanam terenkripsi di QR & file `.ja`, serta langsung menimpa kode bawaan di perangkat peserta (kode bawaan otomatis ditolak jika Admin sudah menetapkan kode khusus).
 - **Galeri Bukti Pelanggaran Pengawas di Exambro Client (Terkunci PIN Pengawas):**
