@@ -1,5 +1,11 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.1.9 (2026-11-26)
+- **Override Password Keluar & PIN Buka Blokir dari Exambro Admin:** Password Keluar (*Exit Password*) dan PIN Buka Blokir (*Unlock PIN*) yang diubah di Exambro Admin kini otomatis tertanam terenkripsi di QR & file `.ja`, serta langsung menimpa kode bawaan di perangkat peserta (kode bawaan otomatis ditolak jika Admin sudah menetapkan kode khusus).
+- **Galeri Bukti Pelanggaran Pengawas di Exambro Client (Terkunci PIN Pengawas):**
+  - Saat terjadi pelanggaran wajah, pengawas kini dapat langsung mengetuk **Lihat Bukti** di layar blokir (memerlukan PIN Pengawas) untuk melihat seluruh foto bukti terenkripsi beserta waktu kejadian.
+  - Pasca ujian selesai, pengawas juga tetap dapat meninjau atau menghapus bukti pelanggaran melalui menu **Bantuan → Galeri Bukti Pengawas** (tetap terkunci PIN Pengawas).
+
 ## v1.1.8 (2026-11-26)
 - **Kalibrasi Proctoring Suara & Kamera (Anti False-Trigger):**
   - Penambahan masa pemanasan (*warm-up grace*) **8 detik** untuk audio dan **6 detik** untuk kamera saat masuk halaman ujian/login agar lonjakan inisialisasi mikrofon maupun waktu muat halaman tidak langsung memicu pelanggaran.
