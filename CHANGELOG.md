@@ -1,5 +1,11 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.1.7 (2026-11-26)
+- **Perbaikan Import/Export File `.ja` (termasuk dari WhatsApp & File Manager):**
+  - Penulisan file `.ja` dari Admin kini menggunakan mode truncate (`"wt"`) + `flush()` dan format tidak terkompresi agar kompatibel 100% di semua versi Exambro Client.
+  - Pembacaan URI file `.ja` dilengkapi fallback `ParcelFileDescriptor` & `file://` untuk kompatibilitas maksimal pada folder *WhatsApp Documents* dan file manager OEM (Xiaomi/Samsung/Oppo/Vivo).
+  - Decoder `.ja` kini toleran terhadap BOM, newline/spasi di tengah payload, mendukung `ACTION_SEND` & `onNewIntent` (buka/kirim langsung dari WhatsApp), menaikkan batas logo kustom hingga 4 MB, dan menampilkan alasan diagnostik spesifik bila file rusak/kosong.
+
 ## v1.1.6 (2026-11-26)
 - **QR Lebih Ringkas & Mudah Dipindai (Admin & Client):**
   - Kompresi DEFLATE + penghapusan duplikasi field pada payload QR Ruang Ujian (ukuran data QR menyusut drastis hingga ~60%, modul jauh lebih renggang dan cepat terbaca kamera).
