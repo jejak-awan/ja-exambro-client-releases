@@ -7,10 +7,10 @@ Repositori distribusi resmi aplikasi **Jejakawan Exam Client** (`com.jejakawan.p
 
 ---
 
-## Unduh Cepat (Versi Terbaru: `v1.1.5`)
+## Unduh Cepat (Versi Terbaru: `v1.1.6`)
 
 - **Halaman Unduh CDN Resmi (Publik, tanpa login):** [https://cdn.jejakawan.com/exambro/](https://cdn.jejakawan.com/exambro/)
-- **Mirror Cadangan (Jika CDN Gangguan):** unduh langsung dari GitHub Releases / Tag di [https://github.com/jejak-awan/ja-exambro-client-releases/releases/tag/v1.1.5](https://github.com/jejak-awan/ja-exambro-client-releases/releases/tag/v1.1.5) (atau daftar semua versi di [Tags](https://github.com/jejak-awan/ja-exambro-client-releases/tags)).
+- **Mirror Cadangan (Jika CDN Gangguan):** unduh langsung dari GitHub Releases / Tag di [https://github.com/jejak-awan/ja-exambro-client-releases/releases/tag/v1.1.6](https://github.com/jejak-awan/ja-exambro-client-releases/releases/tag/v1.1.6) (atau daftar semua versi di [Tags](https://github.com/jejak-awan/ja-exambro-client-releases/tags)).
 - **Manifest Versi Terbaru:** [https://cdn.jejakawan.com/exambro/latest.json](https://cdn.jejakawan.com/exambro/latest.json)
 
 > **Rekomendasi Distribusi Sekolah (Hemat Kuota & Lebih Cepat):**  
@@ -20,9 +20,9 @@ Repositori distribusi resmi aplikasi **Jejakawan Exam Client** (`com.jejakawan.p
 
 | Varian File | Target Perangkat | Rekomendasi |
 | :--- | :--- | :--- |
-| `ja-exambro-client-v1.1.5-arm64-v8a.apk` | HP Android modern 64-bit (2018+) | **Disarankan (paling ringan)** |
-| `ja-exambro-client-v1.1.5-armeabi-v7a.apk` | HP Android 32-bit / lawas | Untuk perangkat lawas |
-| `ja-exambro-client-v1.1.5-universal.apk` | Semua arsitektur Android | Pilih ini jika ragu |
+| `ja-exambro-client-v1.1.6-arm64-v8a.apk` | HP Android modern 64-bit (2018+) | **Disarankan (paling ringan)** |
+| `ja-exambro-client-v1.1.6-armeabi-v7a.apk` | HP Android 32-bit / lawas | Untuk perangkat lawas |
+| `ja-exambro-client-v1.1.6-universal.apk` | Semua arsitektur Android | Pilih ini jika ragu |
 
 **Kebutuhan Minimum:** Android 7.0 Nougat (`API 24`) atau lebih baru.
 

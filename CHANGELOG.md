@@ -1,5 +1,11 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.1.6 (2026-11-26)
+- **QR Lebih Ringkas & Mudah Dipindai (Admin & Client):**
+  - Kompresi DEFLATE + penghapusan duplikasi field pada payload QR Ruang Ujian (ukuran data QR menyusut drastis hingga ~60%, modul jauh lebih renggang dan cepat terbaca kamera).
+  - Perbaikan generator QR Admin: modul kotak tajam presisi piksel tanpa *finder eye* ganda dan tanpa lubang logo di tengah matriks QR (logo dipindah rapi ke header kartu), *quiet zone* standar 4 modul, dan *error correction* adaptif.
+  - Upgrade scanner kamera Client dari 480p ke **HD 720p (`1280×720`)** dengan *autofocus* kontinyu, *tap-to-focus*, dan tombol **Senter (Flash)** untuk ruangan redup.
+
 ## v1.1.5 (2026-11-26)
 - **In-App Auto-Update (Tanpa Uninstall):** Deteksi versi terbaru otomatis saat aplikasi dibuka maupun dari menu *Bantuan → App & Updates*, lengkap dengan unduh APK sesuai arsitektur perangkat, verifikasi integritas **SHA-256**, dan pembaruan langsung via Android Package Installer tanpa menghapus data atau PIN.
 - Perbaikan tampilan info versi & tanggal rilis pada halaman *Bantuan* agar membaca data aplikasi terpasang secara langsung.
