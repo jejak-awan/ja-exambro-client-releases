@@ -1,5 +1,8 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.2.1 (2026-11-26)
+- **Pembersihan Penuh Policy & Lisensi Saat Ruang Dihapus:** Saat ruang ujian Pro/Enterprise dari QR/file `.ja` dihapus dari *Daftar Ruang* (atau di-reset), seluruh konfigurasi sesi aktif, cache form URL/ID, dan lisensi warisan SME kini dibersihkan otomatis sehingga aplikasi kembali murni ke mode **FREE** (atau beralih bersih ke ruang lain yang tersisa).
+
 ## v1.2.0 (2026-11-26)
 - **Kalibrasi Kamera Proctoring & UI Check-in Wajah (Anti False-Positive):**
   - **Cek Kamera & Foto Check-in Awal:** sebelum ujian dimulai (saat proctoring kamera aktif), peserta diarahkan memastikan wajah terlihat jelas di kamera depan dan 1 foto referensi awal tersimpan terenkripsi untuk pembanding di *Galeri Bukti Pengawas*.
