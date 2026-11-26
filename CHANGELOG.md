@@ -1,5 +1,11 @@
 # Changelog — Jejakawan Exam Client
 
+## v1.1.8 (2026-11-26)
+- **Kalibrasi Proctoring Suara & Kamera (Anti False-Trigger):**
+  - Penambahan masa pemanasan (*warm-up grace*) **8 detik** untuk audio dan **6 detik** untuk kamera saat masuk halaman ujian/login agar lonjakan inisialisasi mikrofon maupun waktu muat halaman tidak langsung memicu pelanggaran.
+  - Deteksi kebisingan kini membutuhkan **3 detik suara keras berturut-turut** di atas ambang batas (tidak lagi terpicu oleh batuk singkat atau sentuhan layar), dengan default lebih realistis **78 dB** (rentang `40–120 dB`).
+  - Perbaikan kolom input ambang suara di **Exambro Admin** agar angka dapat dihapus dan diketik ulang dengan bebas tanpa tersangkut digit terakhir.
+
 ## v1.1.7 (2026-11-26)
 - **Perbaikan Import/Export File `.ja` (termasuk dari WhatsApp & File Manager):**
   - Penulisan file `.ja` dari Admin kini menggunakan mode truncate (`"wt"`) + `flush()` dan format tidak terkompresi agar kompatibel 100% di semua versi Exambro Client.
